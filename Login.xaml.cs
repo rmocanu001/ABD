@@ -68,11 +68,12 @@ namespace MagazinElectronic
             }
             else
             {
-                if(Authenticate(UsernameLabel.Text.ToString(), PasswordLabel.ToString()))
+                if(Authenticate(UsernameLabel.Text.ToString(), PasswordLabel.Password.ToString()))
                 {
                     AdminMenu adminMenu = new AdminMenu();
                     //ShowWindow(this);
                     this.Hide();
+                    return;
 
                 }
                 string hashedPass = Utils.ComputeSha256Hash(PasswordLabel.Password);
